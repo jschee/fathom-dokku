@@ -1,5 +1,4 @@
 # fathom self hosted with dokku
----
 
 ## setup fathom instance on your server
 
