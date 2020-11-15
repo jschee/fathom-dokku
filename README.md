@@ -28,7 +28,7 @@ first find your database_password
 dokku postgres:info fathom
 ##should return something like
 ...
->postgres://postgres:<your password is here>@dokku-postgres-fathom-database:3306
+>postgres://postgres:<your password is here>@dokku-postgres-fathom:5432
 ...
 ```
 for the secret key you can just [duckduckgo a random 64 char key](https://duckduckgo.com/?q=generate+password+64&ia=answer)
