@@ -37,11 +37,7 @@ for the secret key you can just [duckduckgo a random 64 char key](https://duckdu
 dokku config:set fathom FATHOM_SERVER_ADDR=:8080
 dokku config:set fathom FATHOM_GZIP=true
 dokku config:set fathom FATHOM_DATABASE_DRIVER=postgres
-<<<<<<< HEAD
 dokku config:set fathom FATHOM_DATABASE_NAME="fathom"
-=======
-dokku config:set fathom FATHOM_DATABASE_NAME="fathom-database"
->>>>>>> 7320402875eac3be728dddacd4bdec077b4886e4
 dokku config:set fathom FATHOM_DATABASE_USER=postgres
 dokku config:set fathom FATHOM_DATABASE_PASSWORD=<password>
 dokku config:set fathom FATHOM_DATABASE_HOST=dokku-postgres-fathom:5432
