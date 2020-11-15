@@ -1,5 +1,10 @@
 # fathom self hosted with dokku
 
+## about
+
+this should get you up and running a fathom-lite instance on your dokku server. if you haven't heard of fathom, please visit them at
+[https://usefathom.com](https://usefathom.com). you can always setup with them directly, but if you do plan on self hosting, please consider spreading the word about fathom, contributing, or [sponsoring](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LJ5WZVA9ER9GJ) the project.
+
 ## setup fathom instance on your server
 
 ```
