@@ -26,9 +26,9 @@ dokku postgres:link fathom fathom
 first find your database_password
 ```
 dokku postgres:info fathom
-# should return something like
+##should return something like
 ...
-postgres://postgres:<your password is here>@dokku-postgres-fathom-database:3306
+>postgres://postgres:<your password is here>@dokku-postgres-fathom-database:3306
 ...
 ```
 for the secret key you can just [duckduckgo a random 64 char key](https://duckduckgo.com/?q=generate+password+64&ia=answer)
@@ -36,13 +36,15 @@ for the secret key you can just [duckduckgo a random 64 char key](https://duckdu
 ```
 dokku config:set fathom FATHOM_SERVER_ADDR=:8080
 dokku config:set fathom FATHOM_GZIP=true
-dokku config:set fathom FATHOM_DATABASE_DRIVER=mysql
-dokku config:set fathom FATHOM_DATABASE_NAME="fathom-database"
-dokku config:set fathom FATHOM_DATABASE_USER=mysql
+dokku config:set fathom FATHOM_DATABASE_DRIVER=postgres
+dokku config:set fathom FATHOM_DATABASE_NAME="fathom"
+dokku config:set fathom FATHOM_DATABASE_USER=postgres
 dokku config:set fathom FATHOM_DATABASE_PASSWORD=<password>
-dokku config:set fathom FATHOM_DATABASE_HOST=dokku-mysql-fathom-database:3306
+dokku config:set fathom FATHOM_DATABASE_HOST=dokku-postgres-fathom:5432
 dokku config:set fathom FATHOM_SECRET=<secret>
 ```
+you should double check if env variables were set correctly. for some reason config set command did not set all the variables. to doublecheck from your root folder: ```cd home/dokku/fathom``` then ```nano ENV```
+
 
 ## change fathom default port to match dokkus port number
 
@@ -66,8 +68,21 @@ dokku letsencrypt:cron-job --add
 ```
 
 ## dont forget to set cname and point your fathom app to proper subdomain
+
 CNAME fathom @
 
-## point the website
-If you followed instructions to a T. You should now have a fathom lite instance running on your own dokku server.
+## require username and password
+
+```
+dokku enter fathom
+```
+
+create user and password
+```
+./fathom user add --email=your@email.com --password=secret
+```
+
+## initial app launch
+
+on the initial app launch you'll be asked to enter a site and will be given a ```<script>``` snippet to shove into your HTML.
 
