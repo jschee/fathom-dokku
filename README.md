@@ -36,9 +36,9 @@ for the secret key you can just [duckduckgo a random 64 char key](https://duckdu
 ```
 dokku config:set fathom FATHOM_SERVER_ADDR=:8080
 dokku config:set fathom FATHOM_GZIP=true
-dokku config:set fathom FATHOM_DATABASE_DRIVER=mysql
+dokku config:set fathom FATHOM_DATABASE_DRIVER=postgres
 dokku config:set fathom FATHOM_DATABASE_NAME="fathom-database"
-dokku config:set fathom FATHOM_DATABASE_USER=mysql
+dokku config:set fathom FATHOM_DATABASE_USER=postgres
 dokku config:set fathom FATHOM_DATABASE_PASSWORD=<password>
 dokku config:set fathom FATHOM_DATABASE_HOST=dokku-mysql-fathom-database:3306
 dokku config:set fathom FATHOM_SECRET=<secret>
